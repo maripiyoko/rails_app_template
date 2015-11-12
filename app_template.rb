@@ -137,10 +137,12 @@ end
 # Rspec
 generate 'rspec:install'
 
-insert_into_file 'spec/rails_helper.rb',%(# devise
+insert_into_file 'spec/rails_helper.rb', %{
+
+  # devise
   config.include Devise::TestHelpers, type: :controller
-), after: 'RSpec.configure do |config|'
-end 
+
+}, after: 'config.infer_spec_type_from_file_location!'
 
 run 'bundle exec spring binstub --all'
 
