@@ -148,3 +148,8 @@ run 'bundle exec spring binstub --all'
 
 run "echo '--color -f d' > .rspec"
 
+# git init
+# ----------------------------------------------------------------
+git :init
+git :add => '.'
+git :commit => "-a -m 'Initial commit'"
