@@ -131,7 +131,7 @@ generate 'devise:views'
 
 # erb -> haml
 Bundler.with_clean_env do
-  run './bin/rake haml:erb2haml'
+  run 'yes | ./bin/rake haml:erb2haml'
 end
 
 # Rspec
