@@ -112,6 +112,9 @@ end
 
 # set Japanese locale
 run 'wget https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/ja.yml -P config/locales/'
+run 'wget https://gist.githubusercontent.com/satour/6c15f27211fdc0de58b4/raw/d4b5815295c65021790569c9be447d15760f4957/devise.ja.yml -P config/locales/'
+run 'wget https://raw.githubusercontent.com/MiraitSystems/enju_trunk/master/config/locales/simple_form.ja.yml -P config/locales/'
+
 
 # Database create
 Bundler.with_clean_env do
@@ -142,6 +145,9 @@ insert_into_file 'spec/rails_helper.rb', %{
   # devise
   config.include Devise::TestHelpers, type: :controller
 
+  # FactoryGirl
+  config.include FactoryGirl::Syntax::Methods
+  
 }, after: 'config.infer_spec_type_from_file_location!'
 
 run 'bundle exec spring binstub --all'
